@@ -2,13 +2,17 @@ package cc.gnaixx.leetcode.easy;
 
 /**
  * name: Topic453
- * desc: sum + m(n-1) = xn; m = x - min -> sum - m
+ * desc: 最小移动次数使数组元素相等
  *
  * @author: xiangqing
  * @date: 2020/05/03
  */
 public class Topic453 {
 
+    // 计算公式
+    // sum + m(n-1) = xn   sum 为原始数组和，m 为移动步骤，n 为数组大小，x 为最后的相等值
+    // m = x - min         移动次数为 x 和 原始数组最小值的差
+    // m = sum - (min * n)
     public int minMoves(int[] nums) {
         int min = nums[0];
         int sum = 0;
