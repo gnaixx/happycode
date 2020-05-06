@@ -31,10 +31,8 @@ public class Topic697 {
 
             if (node.degree == 0) {
                 node.start = i;
-                node.end = i;
-            } else {
-                node.end = i;
             }
+            node.end = i;
             node.degree++;
             if (maxDegree < node.degree) maxDegree = node.degree;
         }
