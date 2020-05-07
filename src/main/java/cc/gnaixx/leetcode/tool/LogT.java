@@ -1,13 +1,13 @@
-package cc.gnaixx.leetcode;
+package cc.gnaixx.leetcode.tool;
 
 /**
  * name: Log
- * desc:
+ * desc: 日志工具
  *
  * @author xiangqing.xxq
  * @date 2020/05/06
  */
-public class Log {
+public class LogT {
     public static void print(int i) {
         System.out.println(i);
     }

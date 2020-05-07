@@ -1,6 +1,6 @@
 package cc.gnaixx.leetcode.easy;
 
-import cc.gnaixx.leetcode.Log;
+import cc.gnaixx.leetcode.tool.LogT;
 
 /**
  * name: Topic1025
@@ -32,11 +32,11 @@ public class Topic1025 {
     }
 
     public static void main(String[] args) {
-        Log.print(new Topic1025().divisorGame(1));
-        Log.print(new Topic1025().divisorGame(2));
-        Log.print(new Topic1025().divisorGame(3));
-        Log.print(new Topic1025().divisorGame(4));
-        Log.print(new Topic1025().divisorGame(5));
-        Log.print(new Topic1025().divisorGame(10));
+        LogT.print(new Topic1025().divisorGame(1));
+        LogT.print(new Topic1025().divisorGame(2));
+        LogT.print(new Topic1025().divisorGame(3));
+        LogT.print(new Topic1025().divisorGame(4));
+        LogT.print(new Topic1025().divisorGame(5));
+        LogT.print(new Topic1025().divisorGame(10));
     }
 }

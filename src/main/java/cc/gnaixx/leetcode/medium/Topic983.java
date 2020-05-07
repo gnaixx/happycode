@@ -1,6 +1,6 @@
 package cc.gnaixx.leetcode.medium;
 
-import cc.gnaixx.leetcode.Log;
+import cc.gnaixx.leetcode.tool.LogT;
 
 /**
  * name: Topic983
@@ -32,17 +32,17 @@ public class Topic983 {
     }
 
     public static void main(String args[]) {
-        Log.print(new Topic983().mincostTickets(
+        LogT.print(new Topic983().mincostTickets(
                 new int[]{1, 4, 6, 7, 8, 20},
                 new int[]{2, 7, 15}
         ));
 
-        Log.print(new Topic983().mincostTickets(
+        LogT.print(new Topic983().mincostTickets(
                 new int[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 30, 31},
                 new int[]{2, 7, 15}
         ));
 
-        Log.print(new Topic983().mincostTickets(
+        LogT.print(new Topic983().mincostTickets(
                 new int[]{1, 4, 6, 7, 8, 9, 10, 13, 14, 15, 16, 20},
                 new int[]{2, 7, 15}
         ));
