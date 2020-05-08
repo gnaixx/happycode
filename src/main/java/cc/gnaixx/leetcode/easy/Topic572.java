@@ -33,7 +33,6 @@ public class Topic572 {
     public static void main(String[] args) {
         TreeNode treeNodeA = createBinaryTree(new int[]{3, 4, 5, 1, 2}, 0);
         TreeNode treeNodeB = createBinaryTree(new int[]{4, 1, 2}, 0);
-
         LogT.print(new Topic572().isSubtree(treeNodeA, treeNodeB));
 
         List<Integer> treeList = new ArrayList<>();
@@ -41,8 +40,9 @@ public class Topic572 {
         LogT.print(treeList.toString());
 
         treeList.clear();
-        preOrderTraverse2(treeNodeB, treeList);
+        preOrderTraverse2(treeNodeA, treeList);
         LogT.print(treeList.toString());
+
 
         treeList.clear();
         inOrderTraverse1(treeNodeA, treeList);
@@ -52,12 +52,17 @@ public class Topic572 {
         inOrderTraverse2(treeNodeA, treeList);
         LogT.print(treeList.toString());
 
+
         treeList.clear();
         postOrderTraverse1(treeNodeA, treeList);
         LogT.print(treeList.toString());
 
         treeList.clear();
         postOrderTraverse2(treeNodeA, treeList);
+        LogT.print(treeList.toString());
+
+        treeList.clear();
+        levelOrderTraverse(treeNodeA, treeList);
         LogT.print(treeList.toString());
     }
 }
