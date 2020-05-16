@@ -4,6 +4,7 @@
 # [121] 买卖股票的最佳时机
 #
 from typing import List
+
 # @lc code=start
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
@@ -19,5 +20,6 @@ class Solution:
         return maxProfit
 
 # @lc code=end
+
 Solution().maxProfit([7,1,5])
 
