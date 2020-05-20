@@ -6,6 +6,8 @@
 
 # @lc code=start
 class Solution:
+    
+    # 直接按位对比
     def isSubsequence(self, s: str, t: str) -> bool:
         if len(s) == 0:
             return True

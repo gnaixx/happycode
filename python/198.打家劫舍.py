@@ -6,6 +6,8 @@
 
 # @lc code=start
 class Solution:
+
+    # 存储之前最大值，及单前最大值
     def rob(self, nums: List[int]) -> int:
         preMax = 0
         curMax = 0
