@@ -7,6 +7,9 @@ from typing import List
 
 # @lc code=start
 class Solution:
+
+    # dp0 表示前一个单子不接情况
+    # dp1 表示前一个单子已经接情况
     def massage(self, nums: List[int]) -> int:
         n = len(nums)
         if n == 0:
