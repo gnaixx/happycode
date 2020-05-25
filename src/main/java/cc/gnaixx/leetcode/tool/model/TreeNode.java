@@ -1,7 +1,5 @@
 package cc.gnaixx.leetcode.tool.model;
 
-import cc.gnaixx.leetcode.easy.Topic572;
-
 /**
  * name: TreeNode
  * desc: 树节点
