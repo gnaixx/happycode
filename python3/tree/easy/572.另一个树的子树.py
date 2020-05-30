@@ -13,19 +13,17 @@
 #         self.right = right
 class Solution:
     def isSameTree(self, s: TreeNode, t: TreeNode) -> bool:
-        if s == None and t == None: 
+        if not s and not t: 
             return True
-        if s == None or t == None: 
+        if not s or not t:
             return False
-        if s.val != t.val: 
-            return False
-        return self.isSameTree(s.left, t.left) or self.isSameTree(s.right, t.right)
+        return s.val==t.val and self.isSameTree(s.left, t.left) and self.isSameTree(s.right, t.right)
 
 
     def isSubtree(self, s: TreeNode, t: TreeNode) -> bool:
-        if t == None: 
+        if not s and not t: 
             return True
-        if s == None: 
+        if not s or not t:
             return False
         return self.isSubtree(s.left, t) or self.isSubtree(s.right, t) or self.isSameTree(s, t)
         
