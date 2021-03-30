@@ -5,7 +5,7 @@
 #
 
 import sys
-sys.path.append('/Users/xiangqing.xxq/Documents/Code/tooy/keepcode/python3')
+sys.path.append('/Users/xiangqing.xxq/Workspace/Code/tooy/keepcode/python3')
 from aatool.TreeT import createBTree
 from aatool.TreeT import preOrder1
 from aatool.TreeT import levelOrder
