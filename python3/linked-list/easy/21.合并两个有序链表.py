@@ -6,8 +6,7 @@
 
 import sys
 sys.path.append('/Users/xiangqing.xxq/Workspace/Code/tooy/keepcode/python3')
-from aatool.LinkT import ListNode
-from aatool.LinkT import createLink, toList
+from aatool.LinkT import ListNode, createSLink, toList
 
 # @lc code=start
 # Definition for singly-linked list.
@@ -63,4 +62,4 @@ class Solution:
     #     return answer
 # @lc code=end
 
-print(toList(Solution().mergeTwoLists(createLink([-9,3]), createLink([5,7]))))
+print(toList(Solution().mergeTwoLists(createSLink([-9,3]), createSLink([5,7]))))
