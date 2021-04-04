@@ -8,30 +8,30 @@ class TreeNode:
         self.right = right
 
 # 创建二叉树
-def createBTree(arrays: List[int], index: int) -> TreeNode:
+def createBTree(array: List, index: int) -> TreeNode:
     treeNode = None
-    if index < len(arrays):
-        treeNode = TreeNode(arrays[index], createBTree(arrays, 2*index+1), createBTree(arrays, 2*index+2))
+    if index < len(array):
+        treeNode = TreeNode(array[index], createBTree(array, 2*index+1), createBTree(array, 2*index+2))
     return treeNode
 
 # 前序遍历
-def preOrder(node: TreeNode, arrays: List[int]):
+def preOrder(node: TreeNode, array: List) -> None:
     if not node: 
         return
-    arrays.append(node.val)
-    preOrder(node.left, arrays)
-    preOrder(node.right, arrays)
+    array.append(node.val)
+    preOrder(node.left, array)
+    preOrder(node.right, array)
 
 # 中序遍历
-def inOrder(node: TreeNode, arrays: List[int]):
+def inOrder(node: TreeNode, array: List) -> None:
     if not node: 
         return
-    inOrder(node.left, arrays)
-    arrays.append(node.val)
-    inOrder(node.right, arrays)
+    inOrder(node.left, array)
+    array.append(node.val)
+    inOrder(node.right, array)
 
 # 后续遍历
-def postOrder(node: TreeNode, arrays: List[int]):
+def postOrder(node: TreeNode, arrays: List) -> None:
     if not node:
         return
     postOrder(node.left, arrays)
@@ -39,7 +39,7 @@ def postOrder(node: TreeNode, arrays: List[int]):
     arrays.append(node.val)
     
 # 前序遍历(非递归)
-def preOrder1(rootNode: TreeNode, arrays: List[int]):
+def preOrder1(rootNode: TreeNode, arrays: List) -> None:
     stack = []
     stack.append(rootNode)
     while stack:
@@ -51,7 +51,7 @@ def preOrder1(rootNode: TreeNode, arrays: List[int]):
             stack.append(node.left)
 
 # 中序遍历(非递归)
-def inOrder1(rootNode: TreeNode, arrays: List[int]):
+def inOrder1(rootNode: TreeNode, arrays: List) -> None:
     stack = []
     node = rootNode
     while node or stack:
@@ -63,7 +63,7 @@ def inOrder1(rootNode: TreeNode, arrays: List[int]):
         node = node.right
 
 # 后续遍历(非递归)
-def postOrder1(rootNode: TreeNode, arrays: List[int]):
+def postOrder1(rootNode: TreeNode, arrays: List) -> None:
     stack = []
     stack.append(rootNode)
     while stack:
@@ -77,7 +77,7 @@ def postOrder1(rootNode: TreeNode, arrays: List[int]):
     arrays = arrays.reverse()
 
 # 层序遍历
-def levelOrder(rootNode: TreeNode, arrays: List[int]):
+def levelOrder(rootNode: TreeNode, arrays: List) -> None:
     queues = queue.Queue()
     queues.put(rootNode)
     while not queues.empty():
