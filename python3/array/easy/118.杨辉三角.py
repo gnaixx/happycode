@@ -13,12 +13,10 @@ class Solution:
         for i in range(0, numRows):
             row = []
             for j in range(0, i+1):
-                num = 0
-                if j - 1 >= 0:
-                    num += rows[i-1][j-1]
-                if j < i:
-                    num += rows[i-1][j]
-                row.append(1 if num==0 else num)
+                if j==0 or j==i:
+                    row.append(1)
+                else:
+                    row.append(rows[i-1][j-1] + rows[i-1][j])
             rows.append(row)
         return rows
 # @lc code=end
