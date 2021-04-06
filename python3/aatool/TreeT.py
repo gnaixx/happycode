@@ -15,33 +15,33 @@ def createBTree(array: List, index: int) -> TreeNode:
     return treeNode
 
 # 前序遍历
-def preOrder(node: TreeNode, array: List) -> None:
-    if not node: 
+def preOrder(root: TreeNode, array: List) -> None:
+    if not root: 
         return
-    array.append(node.val)
-    preOrder(node.left, array)
-    preOrder(node.right, array)
+    array.append(root.val)
+    preOrder(root.left, array)
+    preOrder(root.right, array)
 
 # 中序遍历
-def inOrder(node: TreeNode, array: List) -> None:
-    if not node: 
+def inOrder(root: TreeNode, array: List) -> None:
+    if not root: 
         return
-    inOrder(node.left, array)
-    array.append(node.val)
-    inOrder(node.right, array)
+    inOrder(root.left, array)
+    array.append(root.val)
+    inOrder(root.right, array)
 
 # 后续遍历
-def postOrder(node: TreeNode, arrays: List) -> None:
-    if not node:
+def postOrder(root: TreeNode, arrays: List) -> None:
+    if not root:
         return
-    postOrder(node.left, arrays)
-    postOrder(node.right, arrays)
-    arrays.append(node.val)
+    postOrder(root.left, arrays)
+    postOrder(root.right, arrays)
+    arrays.append(root.val)
     
 # 前序遍历(非递归)
-def preOrder1(rootNode: TreeNode, arrays: List) -> None:
+def preOrder1(root: TreeNode, arrays: List) -> None:
     stack = []
-    stack.append(rootNode)
+    stack.append(root)
     while stack:
         node = stack.pop()
         arrays.append(node.val)
@@ -51,9 +51,9 @@ def preOrder1(rootNode: TreeNode, arrays: List) -> None:
             stack.append(node.left)
 
 # 中序遍历(非递归)
-def inOrder1(rootNode: TreeNode, arrays: List) -> None:
+def inOrder1(root: TreeNode, arrays: List) -> None:
     stack = []
-    node = rootNode
+    node = root
     while node or stack:
         while node:
             stack.append(node)
@@ -63,9 +63,9 @@ def inOrder1(rootNode: TreeNode, arrays: List) -> None:
         node = node.right
 
 # 后续遍历(非递归)
-def postOrder1(rootNode: TreeNode, arrays: List) -> None:
+def postOrder1(root: TreeNode, arrays: List) -> None:
     stack = []
-    stack.append(rootNode)
+    stack.append(root)
     while stack:
         node = stack.pop()
         arrays.append(node.val)
@@ -77,9 +77,9 @@ def postOrder1(rootNode: TreeNode, arrays: List) -> None:
     arrays = arrays.reverse()
 
 # 层序遍历
-def levelOrder(rootNode: TreeNode, arrays: List) -> None:
+def levelOrder(root: TreeNode, arrays: List) -> None:
     queues = queue.Queue()
-    queues.put(rootNode)
+    queues.put(root)
     while not queues.empty():
         node = queues.get()
         arrays.append(node.val)
