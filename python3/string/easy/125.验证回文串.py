@@ -7,11 +7,8 @@
 # @lc code=start
 class Solution:
     def isPalindrome(self, s: str) -> bool:
-        s = s.lower()
-        array = filter(str.isalnum, s)
-        x1 = ''.join(list(array))
-        x2 = x1[::-1]
-        return x1 == x2
+        x1 = ''.join(list(filter(str.isalnum, s.lower())))
+        return x1 == x1[::-1]
 # @lc code=end
 
 Solution().isPalindrome('race a car')
