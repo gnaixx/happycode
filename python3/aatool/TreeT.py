@@ -10,7 +10,7 @@ class TreeNode:
 # 创建二叉树
 def createBTree(array: List, index: int) -> TreeNode:
     treeNode = None
-    if index < len(array):
+    if index < len(array) and array[index]:
         treeNode = TreeNode(array[index], createBTree(array, 2*index+1), createBTree(array, 2*index+2))
     return treeNode
 
