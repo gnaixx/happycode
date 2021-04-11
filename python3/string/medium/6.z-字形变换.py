@@ -6,18 +6,17 @@
 
 # @lc code=start
 class Solution:
-    def convert(self, s: str, numRows: int) -> str:
-        def format(rows):
-            s = ''
-            for i in range(len(rows)):
-                for j in range(len(rows[i])):
-                    if rows[i][j]:
-                        s += rows[i][j]
-            return s
+    def format(self, rows):
+        s = ''
+        for i in range(len(rows)):
+            for j in range(len(rows[i])):
+                if rows[i][j]:
+                    s += rows[i][j]
+        return s
 
+    def convert(self, s: str, numRows: int) -> str:        
         if numRows==1:
             return s
-            
         rows = [[] for i in range(numRows)]
         index = 0
         for j in range(1000):
@@ -28,7 +27,7 @@ class Solution:
                 else:
                     rows[i].append(None)
                 if index >= len(s):
-                    return format(rows)
+                    return self.format(rows)
 
 # @lc code=end
 
