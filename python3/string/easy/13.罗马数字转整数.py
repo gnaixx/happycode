@@ -21,5 +21,5 @@ class Solution:
                 continue
             ansers += KV[s[i]]
         return ansers
-
 # @lc code=end
+
