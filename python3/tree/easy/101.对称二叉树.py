@@ -5,7 +5,7 @@
 #
 
 from typing import List
-from python3.aatool.TreeT import preOrder, TreeNode, createBTree
+from python3.aatool.TreeT import preOrder, TreeNode, createBTree, postOrder3, inOrder, postOrder1, postOrder2
 
 # @lc code=start
 # Definition for a binary tree node.
@@ -27,5 +27,23 @@ class Solution:
         return self.check(root.left, root.right)
 # @lc code=end
 
-root = createBTree([1,2,2,3,4,4,3], 0)
-print(Solution().isSymmetric(root))
+root = createBTree([1,2,3,4,5,6,7], 0)
+list = []
+preOrder(root, list)
+print(list)
+
+list = []
+inOrder(root, list)
+print(list)
+
+list = []
+postOrder1(root, list)
+print(list)
+
+list = []
+postOrder2(root, list)
+print(list)
+
+list = []
+postOrder3(root, list)
+print(list)

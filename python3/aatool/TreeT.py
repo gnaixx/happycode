@@ -40,8 +40,7 @@ def postOrder(root: TreeNode, arrays: List) -> None:
     
 # 前序遍历(非递归)
 def preOrder1(root: TreeNode, arrays: List) -> None:
-    stack = []
-    stack.append(root)
+    stack = [root]
     while stack:
         node = stack.pop()
         arrays.append(node.val)
@@ -52,8 +51,7 @@ def preOrder1(root: TreeNode, arrays: List) -> None:
 
 # 中序遍历(非递归)
 def inOrder1(root: TreeNode, arrays: List) -> None:
-    stack = []
-    node = root
+    stack, node = [], root
     while node or stack:
         while node:
             stack.append(node)
@@ -64,8 +62,7 @@ def inOrder1(root: TreeNode, arrays: List) -> None:
 
 # 后续遍历(非递归)
 def postOrder1(root: TreeNode, arrays: List) -> None:
-    stack = []
-    stack.append(root)
+    stack = [root]
     while stack:
         node = stack.pop()
         arrays.append(node.val)
@@ -76,6 +73,38 @@ def postOrder1(root: TreeNode, arrays: List) -> None:
             stack.append(node.right)
     arrays = arrays.reverse()
 
+# 后续遍历(非递归)
+def postOrder2(root: TreeNode, arrays: List) -> None:
+    # temp 保存是第一次访问该节点
+    stack, node, temp = [], root, []
+    while node or stack:
+        while node:
+            temp.append(node)
+            stack.append(node)
+            node = node.left
+        node = stack.pop()
+        # 如果是第一次访问该节点直接遍历右节点
+        if node in temp:
+            temp.remove(node)
+            stack.append(node)
+            node = node.right
+        else:
+            arrays.append(node.val)
+            node = None     
+
+# 后续遍历(非递归)
+def postOrder3(root: TreeNode, arrays: List) -> None:
+    stack, node, pre = [], root, None
+    while node:
+        # 单前节点没有子节点或者子节点被访问过则可以添加
+        if (not node.left and not node.right) or (pre and (pre==node.left or pre==node.right)):
+            arrays.append(node.val)
+        else:
+            if node.right:
+                stack.append(node.right)
+            if node.left:
+                stack.append(node.left)
+        
 # 层序遍历
 def levelOrder(root: TreeNode, arrays: List) -> None:
     queues = queue.Queue()
