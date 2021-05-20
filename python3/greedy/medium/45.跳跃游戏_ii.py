@@ -28,6 +28,7 @@ class Solution:
         for i in range(n - 1):
             if maxPos >= i:
                 maxPos = max(maxPos, i + nums[i])
+                # 到达边界增加一步
                 if i == end:
                     end = maxPos
                     step += 1
