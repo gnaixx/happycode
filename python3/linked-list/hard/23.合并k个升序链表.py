@@ -19,18 +19,20 @@ class Solution:
         dummyNode = ListNode(0, headNode)
         while any(lists):
             minIndex, minValue = 0, float('inf')
+            # 找出k个链表中最小值和链表编号
             for i, v in enumerate(lists):
                 if not v: continue
                 if v.val <= minValue:
                     minValue, minIndex = v.val, i
+            # 添加最小节点
             if headNode:
                 headNode.next = lists[minIndex]
                 headNode = headNode.next
             else:
                 headNode = lists[minIndex]
                 dummyNode.next = headNode
-            if lists[minIndex]:
-                lists[minIndex] = lists[minIndex].next
+            # 对应的编号的链表往后移一个节点
+            if lists[minIndex]: lists[minIndex] = lists[minIndex].next
         return dummyNode.next
 # @lc code=end
 

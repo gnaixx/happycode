@@ -8,13 +8,13 @@ from typing import List
 
 # @lc code=start
 class Solution:
-    def sortStart(self, intervals: List[List[int]]) -> List[List[int]]:
-        dict, list = {}, []
-        for i, v in enumerate(intervals):
-            dict[v[0]] = v
-        for i in sorted(dict):
-            list.append(dict[i])
-        return list
+    # def sortStart(self, intervals: List[List[int]]) -> List[List[int]]:
+    #     dict, list = {}, []
+    #     for i, v in enumerate(intervals):
+    #         dict[v[0]] = v
+    #     for i in sorted(dict):
+    #         list.append(dict[i])
+    #     return list
 
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
         ans = []

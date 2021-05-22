@@ -4,6 +4,8 @@
 # [219] 存在重复元素 II
 #
 
+from typing import List
+
 # @lc code=start
 class Solution:
     def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:

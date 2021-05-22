@@ -14,6 +14,7 @@ from python3.aatool.LinkT import ListNode, createSLink
 #         self.val = val
 #         self.next = next
 class Solution:
+    # 反转链表的k个节点并返回反转后最后一个节点
     def reverse(self, preNode: ListNode, head: ListNode, k: int) -> ListNode:
         temp, stack = head, []
         for i in range(k):
