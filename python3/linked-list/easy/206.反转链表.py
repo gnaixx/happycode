@@ -42,7 +42,6 @@ class Solution:
 
     def reverseList(self, head: ListNode) -> ListNode:
         return self.iteration(head)
-
         # dummyNode = ListNode(val=0, next=head)
         # self.recursion(dummyNode, head)
         # return dummyNode.next
