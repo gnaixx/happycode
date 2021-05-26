@@ -28,19 +28,24 @@ class Solution:
             return head
 
     # 迭代
-    # def iteration(self, head:ListNode) -> ListNode:
-    #     headNode = head
-    #     tailNode = head
-    #     while head.next:
-    #         head, head.next = head.next, head
-    #         newHead = head.next
+    def iteration(self, head:ListNode) -> ListNode:
+        # 空链，单节点链直接返回
+        if not head or not head.next: return head
+        # 从第二个节点开始遍历
+        headNode, tailNode, head = head, head, head.next
+        while head:
+            # 当前节点后一个节点移到最新尾部，最新表头移到当前节点后
+            tailNode.next, head.next = head.next, headNode
+            # 更新最新节点&单前节点
+            headNode, head = head, tailNode.next
+        return headNode
 
     def reverseList(self, head: ListNode) -> ListNode:
-        # return self.iteration(head)
+        return self.iteration(head)
 
-        dummyNode = ListNode(val=0, next=head)
-        self.recursion(dummyNode, head)
-        return dummyNode.next
+        # dummyNode = ListNode(val=0, next=head)
+        # self.recursion(dummyNode, head)
+        # return dummyNode.next
 # @lc code=end
 
 Solution().reverseList(createSLink([1,2,3,4,5]))
