@@ -32,12 +32,12 @@ class Solution:
         # 空链，单节点链直接返回
         if not head or not head.next: return head
         # 从第二个节点开始遍历
-        headNode, tailNode, head = head, head, head.next
-        while head:
+        headNode, tailNode, curNode = head, head, head.next
+        while curNode:
             # 当前节点后一个节点移到最新尾部，最新表头移到当前节点后
-            tailNode.next, head.next = head.next, headNode
+            tailNode.next, curNode.next = curNode.next, headNode
             # 更新最新节点&单前节点
-            headNode, head = head, tailNode.next
+            headNode, curNode = curNode, tailNode.next
         return headNode
 
     def reverseList(self, head: ListNode) -> ListNode:
