@@ -7,8 +7,9 @@
 # @lc code=start
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
-        n = len(nums) + 1
-        for i in nums:
-            n 
+        missing = len(nums)
+        for i, num in enumerate(nums):
+            missing ^= i ^ num
+        return missing
 # @lc code=end
 
